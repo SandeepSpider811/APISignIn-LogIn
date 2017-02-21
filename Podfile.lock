@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.3.0)
+  - ObjectMapper (2.2.2)
+  - SkyFloatingLabelTextField (2.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.3)
+  - ObjectMapper (~> 2.2)
+  - SkyFloatingLabelTextField (~> 2.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
+  SkyFloatingLabelTextField: 070e749632ffd608d6fd9db3fa488a822524997c
+
+PODFILE CHECKSUM: a24cef421b21bb64e31121dc145072e8635bdc2c
+
+COCOAPODS: 1.2.0
