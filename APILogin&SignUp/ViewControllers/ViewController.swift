@@ -9,6 +9,7 @@ import Alamofire
 import ObjectMapper
 import UIKit
 import SkyFloatingLabelTextField
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -17,13 +18,16 @@ class ViewController: UIViewController {
     var passFetchedFromUserdefault = ""
     let userDefault = UserDefaults.standard
     
+    var dataToDetails = [String : String]()
+
+    @IBOutlet weak var btnSignInOutlet: UIButton!
+    
     @IBOutlet weak var txtFieldEmail: SkyFloatingLabelTextField!
     
     @IBOutlet weak var txtFieldPassword: SkyFloatingLabelTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //fetching values from userdefault
         if userDefault.value(forKey: "savedDict") != nil {
             var dictionary = [String : String]()
@@ -44,16 +48,24 @@ class ViewController: UIViewController {
         } else if txtFieldPassword.text == "" {
             Validations.alertMessage(messageString: "Please enter correct password", selfArg: self, title: "Oops!")
         } else {
+            SVProgressHUD.show()
+            btnSignInOutlet.isEnabled = false
             let param : [String : Any] = ["email": txtFieldEmail.text ?? "",
                                           "password" : txtFieldPassword.text ?? "",
                                           "flag" : 1 ]
+            
             ApiHandler.fetchData(urlStr: "login", parameters: param) { (jsonData) in
                 let userModel = Mapper<User>().map(JSONObject : jsonData)
+                
                 print(userModel?.msg ?? "")
                 print(userModel?.profile?.username ?? "")
                 print(userModel?.profile?.phone ?? "")
-                if userModel?.profile?.username ?? "" != ""{
-                    Validations.alertMessage(messageString: "Login confirmed ", selfArg: self, title: "Congratulations!")
+                print(userModel?.profile?.email ?? "")
+                print(userModel?.profile?.country ?? "")
+                print(userModel?.profile?.city ?? "")
+                print(userModel?.profile?.address ?? "")
+                if userModel?.profile?.username ?? "" != "" {
+//                    Validations.alertMessage(messageString: "Login confirmed ", selfArg: self, title: "Congratulations!")
                     if self.rememberMeFlag == 1 {
                         var dictionary = [String : String]()
                         dictionary["email"] = self.txtFieldEmail.text
@@ -61,6 +73,15 @@ class ViewController: UIViewController {
                         self.userDefault.set(dictionary, forKey: "savedDict")
                         self.userDefault.synchronize()
                     }
+                    self.dataToDetails["username"] = userModel?.profile?.username ?? ""
+                    self.dataToDetails["phone"] = userModel?.profile?.phone ?? ""
+                    self.dataToDetails["email"] = userModel?.profile?.email ?? ""
+                    self.dataToDetails["country"] = userModel?.profile?.country ?? ""
+                    self.dataToDetails["city"] = userModel?.profile?.city ?? ""
+                    self.dataToDetails["address"] = userModel?.profile?.address ?? ""
+                    self.performSegue(withIdentifier: "DetailsViewController", sender: self)
+                    SVProgressHUD.dismiss()
+                    self.btnSignInOutlet.isEnabled = true
                 } else {
                     Validations.alertMessage(messageString: "Something gone wrong!", selfArg: self, title: "Oops!")
                 }
@@ -72,5 +93,16 @@ class ViewController: UIViewController {
         rememberMeFlag = 1
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailsViewController" {
+            let guest = segue.destination as! DetailsViewController
+            guest.username = dataToDetails["username"]!
+            guest.phone = dataToDetails["phone"]!
+            guest.email = dataToDetails["email"]!
+            guest.country = dataToDetails["country"]!
+            guest.city = dataToDetails["city"]!
+            guest.address = dataToDetails["address"]!
+        }
+    }
 }
 

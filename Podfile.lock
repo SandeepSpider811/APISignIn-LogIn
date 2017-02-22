@@ -1,18 +1,24 @@
 PODS:
   - Alamofire (4.3.0)
+  - CustomLoader (0.1.0)
   - ObjectMapper (2.2.2)
   - SkyFloatingLabelTextField (2.0.1)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
+  - CustomLoader
   - ObjectMapper (~> 2.2)
   - SkyFloatingLabelTextField (~> 2.0)
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  CustomLoader: d46af41c8edd818e195d75fbfa5ece63d1910355
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   SkyFloatingLabelTextField: 070e749632ffd608d6fd9db3fa488a822524997c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: a24cef421b21bb64e31121dc145072e8635bdc2c
+PODFILE CHECKSUM: 7a6f8b3749987b0ed3aa8ae3904b15c84ef72f7d
 
 COCOAPODS: 1.2.0

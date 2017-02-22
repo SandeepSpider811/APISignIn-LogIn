@@ -9,9 +9,9 @@ import Alamofire
 import ObjectMapper
 import UIKit
 import SkyFloatingLabelTextField
+import SVProgressHUD
 class SignUpViewController: UIViewController {
 
-    
     @IBOutlet weak var txtFieldName: SkyFloatingLabelTextField!
     
     @IBOutlet weak var txtFieldEmailAddress: SkyFloatingLabelTextField!
@@ -55,6 +55,7 @@ class SignUpViewController: UIViewController {
         } else if txtFieldAddress.text == "" {
             Validations.alertMessage(messageString: "Please enter correct address", selfArg: self, title: "Oops!")
         } else {
+            SVProgressHUD.show()
             let param : [String : Any] = ["username": txtFieldName.text ?? "",
                                           "email" : txtFieldEmailAddress.text ?? "",
                                           "password" : txtFieldPassword.text ?? "",
@@ -74,6 +75,7 @@ class SignUpViewController: UIViewController {
                 print(userModel?.profile?.username ?? "")
                 print(userModel?.profile?.phone ?? "")
                 if self.txtFieldName.text == userModel?.profile?.username ?? ""{
+                    SVProgressHUD.dismiss()
                     Validations.alertMessage(messageString: "Your account has been successfully created", selfArg: self, title: "Congratulations!")
                 } else {
                     Validations.alertMessage(messageString: "Something gone wrong!", selfArg: self, title: "Oops!")

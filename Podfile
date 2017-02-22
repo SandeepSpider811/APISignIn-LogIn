@@ -8,4 +8,6 @@ target 'APILogin&SignUp' do
    pod 'SkyFloatingLabelTextField', '~> 2.0'
    pod 'Alamofire', '~> 4.3'
    pod 'ObjectMapper', '~> 2.2'
+   pod 'CustomLoader'
+   pod 'SVProgressHUD'
 end

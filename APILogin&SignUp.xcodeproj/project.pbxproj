@@ -11,6 +11,7 @@
 		1D6379D71E5B1EC6009D9BF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6379D51E5B1EC6009D9BF1 /* Main.storyboard */; };
 		1D6379DA1E5B1EC6009D9BF1 /* APILogin_SignUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D6379D81E5B1EC6009D9BF1 /* APILogin_SignUp.xcdatamodeld */; };
 		1D6379DF1E5B1EC6009D9BF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6379DD1E5B1EC6009D9BF1 /* LaunchScreen.storyboard */; };
+		1D77400E1E5D476500AF93E1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D77400D1E5D476500AF93E1 /* DetailsViewController.swift */; };
 		1D908D1E1E5C454500FB691C /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D908D1D1E5C454500FB691C /* Validations.swift */; };
 		1DB77F021E5C6DE700E1F30E /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB77EF91E5C6DE700E1F30E /* ApiHandler.swift */; };
 		1DB77F031E5C6DE700E1F30E /* ModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB77EFB1E5C6DE700E1F30E /* ModelClass.swift */; };
@@ -26,6 +27,7 @@
 		1D6379D91E5B1EC6009D9BF1 /* APILogin_SignUp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APILogin_SignUp.xcdatamodel; sourceTree = "<group>"; };
 		1D6379DE1E5B1EC6009D9BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D6379E01E5B1EC6009D9BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D77400D1E5D476500AF93E1 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1D908D1D1E5C454500FB691C /* Validations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validations.swift; path = "APILogin&SignUp/Validations.swift"; sourceTree = "<group>"; };
 		1DB77EF91E5C6DE700E1F30E /* ApiHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
 		1DB77EFB1E5C6DE700E1F30E /* ModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelClass.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				1DB77F001E5C6DE700E1F30E /* SignUpViewController.swift */,
 				1DB77F011E5C6DE700E1F30E /* ViewController.swift */,
+				1D77400D1E5D476500AF93E1 /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				1DB77F061E5C6DE700E1F30E /* SignUpViewController.swift in Sources */,
 				1D6379DA1E5B1EC6009D9BF1 /* APILogin_SignUp.xcdatamodeld in Sources */,
 				1DB77F021E5C6DE700E1F30E /* ApiHandler.swift in Sources */,
+				1D77400E1E5D476500AF93E1 /* DetailsViewController.swift in Sources */,
 				1DB77F031E5C6DE700E1F30E /* ModelClass.swift in Sources */,
 				1DB77F071E5C6DE700E1F30E /* ViewController.swift in Sources */,
 				1DB77F041E5C6DE700E1F30E /* AppDelegate.swift in Sources */,
