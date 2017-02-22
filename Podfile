@@ -10,4 +10,5 @@ target 'APILogin&SignUp' do
    pod 'ObjectMapper', '~> 2.2'
    pod 'CustomLoader'
    pod 'SVProgressHUD'
+   pod 'M13Checkbox', '~> 3.1'
 end

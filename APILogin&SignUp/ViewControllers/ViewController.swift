@@ -10,6 +10,7 @@ import ObjectMapper
 import UIKit
 import SkyFloatingLabelTextField
 import SVProgressHUD
+import M13Checkbox
 
 class ViewController: UIViewController {
     
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
     
     var dataToDetails = [String : String]()
 
+    @IBOutlet weak var checkBoxOutlet: M13Checkbox!
+    
     @IBOutlet weak var btnSignInOutlet: UIButton!
     
     @IBOutlet weak var txtFieldEmail: SkyFloatingLabelTextField!
@@ -83,15 +86,22 @@ class ViewController: UIViewController {
                     SVProgressHUD.dismiss()
                     self.btnSignInOutlet.isEnabled = true
                 } else {
+                    SVProgressHUD.dismiss()
+                    self.btnSignInOutlet.isEnabled = true
                     Validations.alertMessage(messageString: "Something gone wrong!", selfArg: self, title: "Oops!")
                 }
             }
         }
     }
     
-    @IBAction func btnRememberMe(_ sender: Any) {
-        rememberMeFlag = 1
+    @IBAction func checkBoxAction(_ sender: Any) {
+        if checkBoxOutlet.checkState.rawValue == "Checked" {
+            rememberMeFlag = 1
+        } else {
+            rememberMeFlag = 0
+        }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DetailsViewController" {

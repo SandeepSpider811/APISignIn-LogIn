@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>M13Checkbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,6 +42,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>20A9DD9ABBF08BC57372A26C35327BF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4D2A83920B903E8BA45FFA2B00835692</key>
 		<dict>
 			<key>primary</key>
@@ -47,7 +57,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB2B8C70B02B3D12E77A79E2BC822A00</key>
+		<key>A8336497A9356E44C3D8378E4B5AE105</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA50A294019A35F018091F035EF0CE90</key>
+		<key>D04E31CB97019E54992870C17D225C0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F6785355AFDD902AF1E4B35AEF5C5B8A</key>
+		<key>FC44D3CC7C3F6395F0B071B2A1A4F89A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
